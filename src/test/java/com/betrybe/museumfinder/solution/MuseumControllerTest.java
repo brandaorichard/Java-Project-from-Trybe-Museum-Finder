@@ -13,41 +13,34 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-@DisplayName("CollectionTypeController tests")
-public class CollectionTypeControllerTest {
+@DisplayName("Controller Layer tests")
+public class MuseumControllerTest {
 
   @Autowired
   private MockMvc mockMvc;
 
   @Test
-  @DisplayName("Should return status 200")
-  void shouldReturnStatusOk() throws Exception {
-    mockMvc.perform(get("/collections/count/antropologia"))
-        .andExpect(status().isOk());
-  }
-
-  @Test
-  @DisplayName("Should return the body with correct values")
-  void shouldReturnStatusOkAndCorrectBody() throws Exception {
-    mockMvc.perform(get("/collections/count/antropologia"))
+  @DisplayName("Should return a museum with valid id")
+  void shouldReturnMuseumWithId() throws Exception {
+    mockMvc.perform(get("/museums/299"))
         .andExpect(status().isOk())
-        .andExpect(jsonPath("$.count").value(92));
+        .andExpect(jsonPath("$.name")
+            .value("Museu do Trem"));
   }
 
   @Test
-  @DisplayName("Should return status 404")
+  @DisplayName("Should return status 404 with an invalid id")
   void shouldReturnStatusNotFound() throws Exception {
-    mockMvc.perform(get("/collections/count/xablau"))
+    mockMvc.perform(get("/museums/9999999"))
         .andExpect(status().isNotFound());
   }
 
   @Test
-  @DisplayName("should return a counter passing two url parameters")
-  void testStatusOkEBodyWithTwoParams() throws Exception {
-    mockMvc.perform(get("/collections/count/hist,imag"))
+  @DisplayName("Should return the closest museum with some coordinates")
+  void shouldReturnAMuseumByClosest() throws Exception {
+    mockMvc.perform(get("/museums/closest?lat=0&lng=0&max_dist_km=100"))
         .andExpect(status().isOk())
-        .andExpect(jsonPath("$.count").value(492));
+        .andExpect(jsonPath("$.name")
+            .value("Museu da Imagem e do Som (Macapá)"));
   }
-
 }
-
