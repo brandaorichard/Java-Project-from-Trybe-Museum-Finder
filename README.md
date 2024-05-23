@@ -7,9 +7,9 @@ Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua cr
 - quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
 - quais arquivos/pastas foram desenvolvidos pela Trybe.
 -->
-# Museu Finder
+# Museum Finder
 
-Museu Finder é uma aplicação desenvolvida em Java utilizando Spring Boot que permite localizar museus. A aplicação fornece endpoints para criar museus, buscar museus mais próximos com base em coordenadas geográficas e obter informações detalhadas de museus específicos.
+Museum Finder é uma aplicação desenvolvida em Java utilizando Spring Boot que permite localizar museus. A aplicação fornece endpoints para criar museus, buscar museus mais próximos com base em coordenadas geográficas e obter informações detalhadas de museus específicos.
 
 ## Funcionalidades
 
