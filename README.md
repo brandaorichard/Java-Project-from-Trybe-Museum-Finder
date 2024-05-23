@@ -167,21 +167,7 @@ GET /museums/1
 
 Testes utilizando o framework Spring Boot Test e MockMvc para simular as requisições HTTP e verificar as respostas.
 
-Verifica se o endpoint `/museums/{id}` retorna corretamente as informações de um museu existente com base em seu ID.
-
-Verifica se o endpoint `/museums/{id}` retorna o status 404 (NOT FOUND) quando é fornecido um ID de museu inválido.
-
-Verifica se o endpoint `/museums/closest` retorna corretamente as informações do museu mais próximo com base em coordenadas geográficas fornecidas.
-
-Verifica se o endpoint `/collections/count/{type}` retorna o status 200 (OK) para um tipo de coleção válido.
-
-Verifica se o endpoint `/collections/count/{type}` retorna o corpo da resposta com os valores corretos, incluindo o número correto de museus para o tipo de coleção especificado.
-
-Verifica se o endpoint `/collections/count/{type}` retorna o status 404 (NOT FOUND) para um tipo de coleção inválido.
-
-Verifica se o endpoint `/collections/count/{type1},{type2}` retorna corretamente o contador para dois tipos de coleção especificados.
-
-Esses testes garantem que a camada esteja funcionando conforme o esperado, lidando adequadamente com diferentes situações, como IDs inválidos e busca de museus mais próximos.
+Esses testes garantem que a camada esteja funcionando conforme o esperado, lidando adequadamente com diferentes situações, como IDs inválidos, valores incorretos, busca de museus mais próximos, busca por tipo de coleção.
 
 
 ## Instruções de Instalação
